@@ -8,14 +8,18 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.apache.commons.math3.random.RandomAdaptor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.Random;
 
 public class BeautySalonDefitions {
 
     BeautySalonuPage beautySalonuPage = new BeautySalonuPage();
-    Driver driver;
-    Faker faker;
+    Faker faker = new Faker();
+
 
     @Given("Kullanıcı Google Ana Sayfasına Gider")
     public void kullanıcı_google_ana_sayfasına_gider() {
@@ -59,33 +63,37 @@ public class BeautySalonDefitions {
 
     @And("Kullanıcı Hesap Oluşturma {string} Gir")
     public void kullanıcıHesapOlusturmaGir(String name) {
-
-
-        beautySalonuPage.isimGir.sendKeys("Helene",Keys.TAB);
+        name =faker.name().firstName();
+        beautySalonuPage.isimGir.sendKeys(name,Keys.TAB);
     }
 
     @And("Kullanıcı Hesap Oluşturma {string} Girer")
     public void kullanıcıHesapOlusturmaGirer(String lastName) {
-        //lastName=faker.name().lastName();
-        beautySalonuPage.soyadıGir.sendKeys("Rute",Keys.ENTER);
+        lastName = faker.name().lastName();
+        beautySalonuPage.soyadıGir.sendKeys(lastName,Keys.ENTER);
 
     }
 
     @And("Kullanıcı Hesap Oluşturma Dogum Tarihini <{string}> Gir")
     public void kullanıcıHesapOlusturmaDogumTarihiniGir(String gun) {
-        beautySalonuPage.gün.sendKeys("30",Keys.TAB);
+       gun = String.valueOf(faker.number().numberBetween(1,31));
+        beautySalonuPage.gün.sendKeys(gun,Keys.TAB);
     }
 
 
     @And("Kullanıcı Hesap Oluşturma Dogum Tarihi <{string}> Gir")
     public void kullanıcıHesapOlusturmaDogumTarihiGir(String ay) {
+        ay = String.valueOf(faker.date().birthday().getMonth());
         Select selectAy = new Select(beautySalonuPage.ay);
-        selectAy.selectByIndex(7);
+        selectAy.selectByValue(ay);
     }
 
     @And("Kullanıcı Hesap Oluşturma Dogum Tarihi <{string}> Girer")
     public void kullanıcıHesapOlusturmaDogumTarihiGirer(String yıl) {
-        beautySalonuPage.yıl.sendKeys("1999",Keys.TAB);
+
+        beautySalonuPage.yıl.sendKeys("1989",Keys.TAB);
+        Driver.bekle(5);
+        ReusableMethods.tumSayfaResmi();
     }
     @And("Kullanıcı Hesap Oluşturmada Cinsiyetini Tercih Eder")
     public void kullanıcıHesapOlusturmadaCinsiyetiniTercihEder() {
