@@ -17,11 +17,12 @@ public class BeautySalonuPage {
     @FindBy(css = "[id='wrkpb']")
     public WebElement yorumTıkla;
 
-    @FindBy(xpath = "(//div[@class='VfPpkd-dgl2Hf-ppHlrf-sM5MNb'])[3]")
+    @FindBy(css = "span[class='gb_Jd']")
+    public WebElement oturumuAç;
+
+    @FindBy(css = "div[class='ZOeJnf']")
     public  WebElement hesapOluştur;
 
-    @FindBy(xpath = "//span[@class='gb_Id']")
-    public WebElement oturumuAç;
 
     @FindBy(xpath = "(//*[@class='G3hhxb VfPpkd-StrnGf-rymPhb-ibnC6b'])[1]")
     public WebElement kendimİçinEmail;
@@ -47,7 +48,7 @@ public class BeautySalonuPage {
     @FindBy(css = "[id='birthdaygenderNext']")
     public WebElement sonra;
 
-    @FindBy(xpath = "(//div[@class='enBDyd '])[1]")
+    @FindBy(xpath = "(//*[@class='SCWude'])[1]")
     public WebElement emailTercihi;
 
     @FindBy(css = "div[id='next']")

@@ -19,6 +19,4 @@
       And Kullanıcı Hesap Olusturuken Password Girer
       And Kullanıcı Hesap Olustururken Password Tekrar Eder
       And Kullanıcı Hesap Olusturuken Password Olusturur
-      And Kullanıcı Yorum Yazabilir ve Görüntüleyebilmeli
-      And Kullanıcı 1 ile 5 arasında bir puan verebilmeli
       And Kullanıc Sayfayı Kapatır

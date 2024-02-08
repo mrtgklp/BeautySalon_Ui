@@ -31,22 +31,18 @@ public class BeautySalonDefitions {
     }
     @Then("Kullanıcı Güzellik Salonu Yorum Kısmına Gider")
     public void kullanıcı_güzellik_salonu_yorum_kısmına_gider() {
-        beautySalonuPage.yorumTıkla.click();
+        //beautySalonuPage.yorumTıkla.click();
+        //Driver.bekle(5);
+        //ReusableMethods.tumSayfaResmi();
 
     }
-    @Then("Kullanıcı Yorum Yazabilir ve Görüntüleyebilmeli")
-    public void kullanıcı_yorum_yazabilir_ve_görüntüleyebilmeli() {
 
-    }
-    @Then("Kullanıcı {int} ile {int} arasında bir puan verebilmeli")
-    public void kullanıcı_ile_arasında_bir_puan_verebilmeli(Integer int1, Integer int2) {
-
-    }
 
 
     @Then("Googleda Oturum Aç")
     public void googledaOturumAc() {
-        beautySalonuPage.oturumuAç.click();
+       beautySalonuPage.oturumuAç.click();
+       Driver.bekle(4);
     }
 
     @Then("Googleda Hesap Oluştur")
@@ -108,6 +104,7 @@ public class BeautySalonDefitions {
 
     @And("Kullanıcı Hesap Olustururken Email Tercih Eder")
     public void kullanıcıHesapOlustururkenEmailTercihEder() {
+        Driver.bekle(4);
         beautySalonuPage.emailTercihi.click();
         Driver.bekle(4);
         ReusableMethods.tumSayfaResmi();
