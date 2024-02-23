@@ -24,6 +24,7 @@ public class BeautySalonDefitions {
     @Given("Kullanıcı Google Ana Sayfasına Gider")
     public void kullanıcı_google_ana_sayfasına_gider() {
         Driver.getDriver().get(ConfigReader.getProperty("beauty_url"));
+
     }
     @Then("Kullanıcı Arama Kısmında Güzellikli Salonu Aratır")
     public void kullanıcı_arama_kısmında_güzellikli_salonu_aratır() {
