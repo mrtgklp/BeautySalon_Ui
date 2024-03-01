@@ -17,7 +17,7 @@ public class BeautySalonuPage {
     @FindBy(css = "[id='wrkpb']")
     public WebElement yorumTıkla;
 
-    @FindBy(css = "span[class='gb_Jd']")
+    @FindBy(css = "a[class$='me']")
     public WebElement oturumuAç;
 
     @FindBy(css = "div[class='ZOeJnf']")

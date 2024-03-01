@@ -32,9 +32,9 @@ public class BeautySalonDefitions {
     }
     @Then("Kullanıcı Güzellik Salonu Yorum Kısmına Gider")
     public void kullanıcı_güzellik_salonu_yorum_kısmına_gider() {
-        //beautySalonuPage.yorumTıkla.click();
-        //Driver.bekle(5);
-        //ReusableMethods.tumSayfaResmi();
+       // beautySalonuPage.yorumTıkla.click();
+       // Driver.bekle(5);
+       // ReusableMethods.tumSayfaResmi();
 
     }
 
