@@ -26,28 +26,30 @@ public class BeautySalonDefitions {
         Driver.getDriver().get(ConfigReader.getProperty("beauty_url"));
 
     }
+
     @Then("Kullanıcı Arama Kısmında Güzellikli Salonu Aratır")
     public void kullanıcı_arama_kısmında_güzellikli_salonu_aratır() {
-        beautySalonuPage.aramabotunu.sendKeys(ConfigReader.getProperty("beautySalonName"),Keys.ENTER);
+        beautySalonuPage.aramabotunu.sendKeys(ConfigReader.getProperty("beautySalonName"), Keys.ENTER);
     }
+
     @Then("Kullanıcı Güzellik Salonu Yorum Kısmına Gider")
     public void kullanıcı_güzellik_salonu_yorum_kısmına_gider() {
-       // beautySalonuPage.yorumTıkla.click();
-       // Driver.bekle(5);
-       // ReusableMethods.tumSayfaResmi();
+        // beautySalonuPage.yorumTıkla.click();
+        //Driver.bekle(5);
+        // ReusableMethods.tumSayfaResmi();
 
     }
-
 
 
     @Then("Googleda Oturum Aç")
     public void googledaOturumAc() {
-       beautySalonuPage.oturumuAç.click();
-       Driver.bekle(4);
+        beautySalonuPage.oturumuAç.click();
+        Driver.bekle(4);
     }
 
     @Then("Googleda Hesap Oluştur")
     public void googledaHesapOlustur() {
+        ReusableMethods.scrollEnd();
         beautySalonuPage.hesapOluştur.click();
     }
 
@@ -60,21 +62,21 @@ public class BeautySalonDefitions {
 
     @And("Kullanıcı Hesap Oluşturma {string} Gir")
     public void kullanıcıHesapOlusturmaGir(String name) {
-        name =faker.name().firstName();
-        beautySalonuPage.isimGir.sendKeys(name,Keys.TAB);
+        name = faker.name().firstName();
+        beautySalonuPage.isimGir.sendKeys(name, Keys.TAB);
     }
 
     @And("Kullanıcı Hesap Oluşturma {string} Girer")
     public void kullanıcıHesapOlusturmaGirer(String lastName) {
         lastName = faker.name().lastName();
-        beautySalonuPage.soyadıGir.sendKeys(lastName,Keys.ENTER);
+        beautySalonuPage.soyadıGir.sendKeys(lastName, Keys.ENTER);
 
     }
 
     @And("Kullanıcı Hesap Oluşturma Dogum Tarihini <{string}> Gir")
     public void kullanıcıHesapOlusturmaDogumTarihiniGir(String gun) {
-       gun = String.valueOf(faker.number().numberBetween(1,31));
-        beautySalonuPage.gün.sendKeys(gun,Keys.TAB);
+        gun = String.valueOf(faker.number().numberBetween(1, 31));
+        beautySalonuPage.gün.sendKeys(gun, Keys.TAB);
     }
 
 
@@ -88,10 +90,11 @@ public class BeautySalonDefitions {
     @And("Kullanıcı Hesap Oluşturma Dogum Tarihi <{string}> Girer")
     public void kullanıcıHesapOlusturmaDogumTarihiGirer(String yıl) {
 
-        beautySalonuPage.yıl.sendKeys("1989",Keys.TAB);
+        beautySalonuPage.yıl.sendKeys("1989", Keys.TAB);
         Driver.bekle(5);
         ReusableMethods.tumSayfaResmi();
     }
+
     @And("Kullanıcı Hesap Oluşturmada Cinsiyetini Tercih Eder")
     public void kullanıcıHesapOlusturmadaCinsiyetiniTercihEder() {
         Select gender = new Select(beautySalonuPage.cinsiyet);
@@ -118,7 +121,7 @@ public class BeautySalonDefitions {
 
     @And("Kullanıcı Hesap Olusturuken Password Girer")
     public void kullanıcıHesapOlusturukenPasswordGirer() {
-        beautySalonuPage.password.sendKeys(ConfigReader.getProperty("password"),Keys.TAB);
+        beautySalonuPage.password.sendKeys(ConfigReader.getProperty("password"), Keys.TAB);
     }
 
     @And("Kullanıcı Hesap Olustururken Password Tekrar Eder")
@@ -132,6 +135,7 @@ public class BeautySalonDefitions {
         Driver.bekle(5);
         ReusableMethods.tumSayfaResmi();
     }
+
     @Then("Kullanıc Sayfayı Kapatır")
     public void kullanıc_sayfayı_kapatır() {
         Driver.closeDriver();

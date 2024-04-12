@@ -17,14 +17,14 @@ public class BeautySalonuPage {
     @FindBy(css = "[id='wrkpb']")
     public WebElement yorumTıkla;
 
-    @FindBy(css = "a[class$='me']")
+    @FindBy(css = "div[class='gb_b']")
     public WebElement oturumuAç;
 
-    @FindBy(css = "div[class='ZOeJnf']")
+    @FindBy(css = "div[class$='Fd']")
     public  WebElement hesapOluştur;
 
 
-    @FindBy(xpath = "(//*[@class='G3hhxb VfPpkd-StrnGf-rymPhb-ibnC6b'])[1]")
+    @FindBy(xpath = "(//*[@class='gNVsKb G3hhxb VfPpkd-StrnGf-rymPhb-ibnC6b'])[1]")
     public WebElement kendimİçinEmail;
 
     @FindBy(css = "input[name='firstName']")
